@@ -19,3 +19,8 @@ int sum(int x, int* arr)
 
 	return result;
 }
+
+int SUM(int left, int right,int* arr)
+{
+	return sum(right, arr) - sum(left - 1,arr);
+}

@@ -48,6 +48,13 @@ int main()
 	cin >> x;
 	cout << endl << endl;
 	cout<<sum(x-1, fenvik);
+	int y, z;
+	cout << "введите нижний предел суммы: " << endl;
+	cin >> y;
+	cout << "введите верхний предел суммы: " << endl;
+	cin >> z;
+	cout << SUM(y-1,z-1,fenvik);
+
 	
 
 	
