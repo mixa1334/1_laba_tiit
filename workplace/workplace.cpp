@@ -13,8 +13,8 @@ int main()
 	
 	int n;
 	int k;
-	cout << "введите n: ";
-	cin >> n;
+	printf("введите n: ");
+    scanf_s("%d",&n);
 	int* fenvik = new int[n];
 	int* massiv = new int[n];
 
@@ -26,21 +26,21 @@ int main()
 	}
 	for (int i = 0; i < n; i++)
 	{
-		cout << "введите элемент:";
-		cin >> k;
+		printf("введите элемент: ");
+		scanf_s("%d",&k);
         upd(massiv, fenvik, i,k,n);
 	}
 	
-	cout << "эелементы массива:";
+	printf("эелементы массива: ");
 	for (int i = 0; i < n; i++)
 	{
-		cout << massiv[i]<<" ";
+		printf("%d ",massiv[i]);
 	}
-	cout << endl;
-	cout << "эелементы дерева:";
+	
+	printf("\nэелементы дерева: ");
 	for (int i = 0; i < n; i++)
 	{
-		cout << fenvik[i]<<" ";
+		printf("%d ",fenvik[i]);
 	}
 	cout << endl << endl;
 	int x;

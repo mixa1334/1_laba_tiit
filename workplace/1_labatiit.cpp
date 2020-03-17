@@ -1,10 +1,11 @@
 #include "1_labatiit.h"
-void upd(int* arr, int* fenv, int number_of_element, int element, int size)
+
+void upd(int* arr, int* fenv, int number_of_element, int add, int size)
 {
-	arr[number_of_element] += element;
+	arr[number_of_element] += add;
 	while (number_of_element < size)
 	{
-		fenv[number_of_element] += element;
+		fenv[number_of_element] += add;
 		number_of_element = (number_of_element | (number_of_element + 1));
 	}
 }
