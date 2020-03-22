@@ -1,6 +1,22 @@
 #pragma once
+#include <iostream>
+#include <cstdlib>
+#include <cstdio>
 #include <vector>
+using namespace std;
 
-void upd(int* arr, int* fenv, int number_of_element, int element, int size);
-int sum(int x, int* arr);
-int SUM(int left, int right, int* arr);
+struct fenvik 
+{
+private:
+	int* arr;
+	int* mas;
+	bool upd_sum_check(int x);
+	int n;
+public:
+	void create();
+	void show();
+	void upd();
+	int sum();
+	void del();
+	int SUM();
+};
