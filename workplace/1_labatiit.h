@@ -10,13 +10,13 @@ struct fenvik
 private:
 	int* arr;
 	int* mas;
-	bool upd_sum_check(int x);
 	int n;
 public:
+	void set_n(int x);
 	void create();
 	void show();
-	void upd();
-	int sum();
+	void upd(int number_of_element,int add);
+	int sum(int up);
 	void del();
-	int SUM();
+	int SUM(int r,int l);
 };

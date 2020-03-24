@@ -8,12 +8,18 @@ fenvik FEN;
 
 
 bool oper(int x);
+bool check(int x,int size);
 
 int main() 
 {
 	system("chcp 1251>nul");
 	int op;
+	int x,number,add,up,l,r;
+	printf("Введите размер дерева: ");
+	scanf_s("%d", &x);
+	FEN.set_n(x);
 	FEN.create();
+	printf("Дерево фенвика и массив состаящие из %d элементов: ", x);
 	FEN.show();
 	while (true)
 	{
@@ -29,16 +35,36 @@ int main()
 			system("CLS");
 			break;
 		case 1:
-			FEN.upd();
+			cout << "введите номер элемента который хотите изменить: ";
+			do {
+				cin >> number;
+			} while (check(number,x) != 1);
+			cout << "введите на скольно хотите изенить элемент: ";
+			cin >> add;
+			FEN.upd(number,add);
 			break;
 		case 2:
-			FEN.sum();
+			cout << "Введите верхний предел суммы: ";
+			do
+			{
+				cin >> up;
+			} while (check(up,x)!=1);
+			cout<<FEN.sum(up);
 			break;
 		case 3:
+			printf("Дерево фенвика и массив состаящие из %d элементов: ", x);
 			FEN.show();
 			break;
 		case 4:
-			FEN.SUM();
+			cout << "Введите верхний предел суммы: ";
+			do {
+				cin >> r;
+			} while (check(r, x) != 1);
+			cout << "Введите нижний предел суммы: ";
+			do {
+				cin >> l;
+			} while (check(l, x) != 1);
+			cout<<FEN.SUM(r,l);
 			break;
 		case 5:
 			FEN.del();
@@ -51,6 +77,18 @@ int main()
 	return 0;
 }
 
+bool check(int x,int size)
+{
+	if (x <= size && x > 0)
+	{
+		return true;
+	}
+	else
+	{
+		printf("Повторите ввод:");
+		return false;
+	}
+}
 bool oper(int x)
 {
 	if (x == 1 || x == 2 || x == 3 ||x==4|| x == 0 || x == 5)
